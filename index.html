@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Banner</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .head {
+      text-align: center;
+      justify-content: center;
+      background-color: black;
+      width: 100%;
+      height: 60px;
+    }
+
+    .banner {
+
+      /* background-image: url(image\banner.jpg); /* Replace with your image 
+      background-size: cover;
+      background-position: center;*/
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 80%;
+    }
+
+    .banner-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px 40px;
+      border-radius: 10px;
+      color: #FFD700;
+      font-weight: 800;
+      font-size: clamp(24px, 5vw, 48px);
+      text-shadow: 2px 2px 4px black;
+      position: relative;
+    }
+
+    .banner button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #ffa500;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .container {
+      display: flex;
+      gap: 100px;
+      justify-content: center;
+
+
+    }
+
+    .card {
+      background-color: lightgoldenrodyellow;
+      width: 400px;
+
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      padding-top: 10px;
+      color: #444;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .banner button:hover {
+      background-color: #e69500;
+    }
+
+    button {
+      background-color: goldenrod;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+
+      font-weight: bold;
+
+    }
+
+    .banner button {
+      width: auto;
+      /* Let width be auto based on content */
+      min-width: 120px;
+      /* Optional: minimum width for better look */
+      padding: 12px 25px;
+    }
+
+    button:hover {
+      background-color: darkorange;
+    }
+
+
+    .services-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px 0;
+      background-color: antiquewhite;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      display: flex;
+      width: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      flex: 0 0 40%
+    }
+
+    .service-card:hover {
+      background-color: #dec088;
+      cursor: pointer;
+    }
+
+    .service-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .service-card .text {
+      padding: 25px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #111;
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .testimonials {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f7f1e3;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-image: url(image\travel.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 150px 100px;
+
+      position: relative;
+    }
+
+
+    .testimonials h2 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+
+    }
+
+    .testimonial-card {
+      padding: 35px;
+      max-width: 300px;
+      border-radius: 7px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: rgb(220, 190, 152);
+    }
+
+    .testimonial-footer {
+      display: flex;
+      align-items: left;
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    .testimonial-footer img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .stars {
+      color: #f39c12;
+    }
+
+    .footer-image {
+      background-image: url('image/footer.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 800px;
+      /* Adjust width to fit nicely */
+      height: 600px;
+      /* Adjust height to match image */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-style: italic;
+      font-size: 40px;
+      font-weight: 1000;
+      text-align: center;
+      padding: 20px;
+
+
+
+    }
+
+    .footer {
+      display: flex;
+      gap: 150px;
+      justify-content: center;
+      background-color: rgb(82, 39, 9);
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+    }
+
+    .footer-content div p {
+      line-height: 1.5;
+      font-size: 20px;
+    }
+
+    .footer-content div h2 {
+      font-size: 28px;
+      margin-bottom: 8px
+    }
+
+    @media (max-width: 768px) {
+
+      .container,
+      .services-section,
+      .testimonial-container,
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .card,
+      .service-card,
+      .testimonial-card {
+        width: 90%;
+        max-width: 400px;
+      }
+
+      .banner {
+        height: auto;
+        padding: 40px 20px;
+      }
+
+      .banner-content {
+        font-size: 18px;
+      }
+
+      .footer-image {
+        max-width: 100%;
+        font-size: 28px;
+        padding: 20px;
+      }
+
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="head"><img src="image\h.gif"></h1>
+  <div class="banner">
+    <video autoplay muted loop class="banner-video">
+      <source src="image\video4.mp4" type="video/mp4">
+    </video>
+    <div class="banner-content">
+      <div>
+
+        <marquee width=100% direction="left" height="100px" behavior="scroll" scrollamount="15">
+          Let us plan your spiritual trip<br>
+          Explore Vrindavan, Mathura & Barsana with us</marquee>
+
+      </div>
+      <button onclick="window.location.href='#packages';">Plan My Trip</button>
+    </div>
+  </div>
+
+  <div style="background-color: antiquewhite;">
+    <table>
+      <tr>
+        <td>
+
+          <div style="text-align: left; height: 300px;padding: 10px;">
+            <h1 style="font-size:38px;">Travel made easy!</h1>
+            <p style=" font-style:italic; margin: 0px; padding: 20px;">
+              We offer spiritual and cultural tours through the sacred cities of Krishna’s pastimes — Vrindavan,
+              Mathura, and Barsana. These timeless towns are rich with
+              ancient temples, sacred ghats, and vibrant traditions that echo the life and leelas of Lord Krishna.
+              <br> <br>
+              Whether you wish to walk the serene parikrama paths of Vrindavan, witness the aartis by the Yamuna in
+              Mathura, or experience the divine love stories of
+              Radha and Krishna in the vibrant lanes of Barsana — we’ve got you covered.
+              <br><br>
+              Our curated itineraries combine authentic experiences, comfortable travel, and spiritual insight, making
+              your journey both meaningful and hassle-free.
+              Let us handle the planning while you focus on devotion, discovery, and peace.
+              <br>
+            <div style="display: flex; gap: 50px; text-align: center; justify-content: center;">
+              <button
+                style="background-color: #ffa500; border-radius: 20px;width: 200px; height: 50px; font-size: 16px;">View
+                Tour Packages</button>
+              <button
+                style="background-color:#ffa500; border-radius: 20px;width: 200px; height: 50px; font-size: 16px;">Explore
+                Our Services</button>
+            </div>
+            </p>
+          </div>
+        </td>
+        <td>
+          <img src="image\travel.jpg" style="width 150px" height="400px">
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div style="background-color:rgb(82, 39, 9);">
+    <h1 style="text-align:center; color: white; font-size:50px;margin: 0; padding: 20px 0;">Featured Travel Packages
+    </h1>
+    <div class="container">
+      <div class="card">
+        <img src="image\vrindavan.jpg">
+        <div class="content">
+          <h3>Vrindavan Bliss Tour</h3>
+          <p class="price">Starts at 999/-</p>
+          <ul>
+            <li>Main Temple Visits</li>
+            <li>Yamuna Aarti</li>
+            <li>Half board meals</li>
+            <li>Guided history tour</li>
+          </ul>
+          <button>BOOK NOW</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="image\barsana.jpg">
+        <div class="content">
+          <h3>Barsana Culture Retreat</h3>
+          <p class="price">Starts at 1500/-</p>
+          <ul>
+            <li>Radha Rani darshan,</li>
+            <li>Local folk music</li>
+            <li>Village visit</li>
+            <li>Spa & massage session</li>
+          </ul>
+          <button>BOOK NOW</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="image\mathura.jpg">
+        <div class="content">
+          <h3>Mathura Heritage Walk</h3>
+          <p class="price">Starts at 3000/-</p>
+          <ul>
+            <li>Janmabhoomi visit</li>
+            <li>Dwarkadheesh Temple</li>
+            <li>Full board meals</li>
+            <li>Museum</li>
+          </ul>
+          <button>BOOK NOW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="services-section">
+    <h3 style="font-size: 40px; text-align: center; width: 100%;">We'll handle your trip for you</h3>
+    <div class="service-card">
+      <img src="image\temple.jpg">
+      <div class="text">
+        <h3>Temple Tours </h3>
+        <p>Guided visits to Krishna Janmabhoomi, Radha Rani Temple, Banke Bihari, and more</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="image\aarti.jpeg">
+      <div class="text">
+        <h3>Cultural Experiences</h3>
+        <p>Attend Aartis, Raas Leelas, and folk performances</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="image\bus.jpg">
+      <div class="text">
+        <h3>Transport Services</h3>
+        <p>AC bus and private cab options from Delhi, Agra & Jaipur</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="image\hotel.jpg" alt="Hotel Bookings">
+      <div class="text">
+        <h3>Comfortable Stays</h3>
+        <p>Book stays in peaceful dharamshalas or boutique hotels</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="testimonials">
+    <h2>Our favorite travelers</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>
+          Visiting Vrindavan was a deeply spiritual experience.
+          The travel agency arranged smooth darshan at Banke Bihari Temple.
+          From Yamuna aarti to local prasad, everything was well organized.
+          I felt connected to Lord Krishna
+        </p>
+        <div class="testimonial-footer">
+          <img src="image\people1.jpg">
+          <div>
+            <strong>Julia Patel</strong><br>
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>
+          Mathura, the birthplace of Lord Krishna, was magical.
+          Our guide gave us rich insights into Krishna Janmabhoomi.
+          The agency took care of transport, tickets, and meals perfectly.
+          A seamless, soul-touching journey I’ll always remember
+        </p>
+        <div class="testimonial-footer">
+          <img src="image\people2.jpg">
+          <div>
+            <strong>Noah Schumacher</strong><br>
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p>
+          Barsana's divine charm left us speechless.
+          Walking through Radha Rani Temple was truly surreal.
+          The agency ensured we avoided crowds and had enough time to explore.
+          Grateful for such a serene, spiritually uplifting trip
+        </p>
+        <div class="testimonial-footer">
+          <img src="image\people3.jpg" alt="Natalia Lowe">
+          <div>
+            <strong>Varun Dhawan</strong><br>
+            <span class="stars">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="footer">
+    <div class="footer-image">
+      <h2>Let's together plan you spritual journey </h2>
+    </div>
+    <div class="footer-content">
+      <div>
+        <h2>Address</h2>
+        <p>Shastri Nagar <br> Meerut,250004 <br> U.P ,India</p>
+      </div>
+      <div>
+        <h2>Contact</h2> <br>
+        <p>Telephone : 0121-40 51 536 <br> Mobile :+91 854125698 <br> krishnapath_travel@gmail.com</p>
+      </div>
+      <div>
+        <h2>Office hours</h2>
+        <p>Summers: 9 a.m to 11 p.m <br> Winters: 10 a.m to 9 p.m </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
