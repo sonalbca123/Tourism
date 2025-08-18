@@ -75,8 +75,94 @@
 
 
     }
+.travel-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: antiquewhite;
+  flex-wrap: wrap;  /* Allows items to wrap on smaller screens */
+}
 
-    .card {
+.travel-info-left {
+  flex: 1;
+  max-width: 50%; /* Allows the text section to take 50% of the width */
+  padding-right: 20px;
+}
+
+.travel-info-right {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents image overflow */
+}
+
+.travel-info-left h1 {
+  font-size: 38px;
+}
+
+.travel-info-left p {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  background-color: #ffa500;
+  border-radius: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.travel-info-right img {
+  width: 100%; /* Makes the image take full width */
+  height: auto; /* Ensures the image maintains aspect ratio */
+  object-fit: cover; /* Makes the image cover the container without stretching */
+  max-height: 400px; /* Limiting the max height of the image */
+}
+
+@media (max-width: 768px) {
+  .travel-info {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .travel-info-left {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .travel-info-right {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  .travel-info-left h1 {
+    font-size: 30px;
+  }
+
+  .travel-info-left p {
+    font-size: 14px;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
+
+  .travel-info-right img {
+    max-height: 300px; /* Reduce the image height on smaller screens */
+  }
+}    .card {
       background-color: lightgoldenrodyellow;
       width: 400px;
 
@@ -333,7 +419,7 @@
     }
   </style>
 </head>
-
+<link rel="shortcut icon" href="https://pics.craiyon.com/2023-10-15/34543cb875014072821eab78eaf9009a.webp" type="image/x-icon">
 <body>
   <h1 class="head"><img src="image\h.gif"></h1>
   <div class="banner">
@@ -351,44 +437,32 @@
       <button onclick="window.location.href='#packages';">Plan My Trip</button>
     </div>
   </div>
+<div style="background-color: antiquewhite;">
+  <div class="travel-info">
+  <div class="travel-info-left">
+    <h1 style="font-size: 38px;">Travel made easy!</h1>
+    <p style="font-style:italic; margin: 0px; padding: 20px;">
+      We offer spiritual and cultural tours through the sacred cities of Krishna’s pastimes — Vrindavan,
+      Mathura, and Barsana. These timeless towns are rich with ancient temples, sacred ghats, and vibrant traditions that echo the life and leelas of Lord Krishna.
+      <br> <br>
+      Whether you wish to walk the serene parikrama paths of Vrindavan, witness the aartis by the Yamuna in Mathura, or experience the divine love stories of Radha and Krishna in the vibrant lanes of Barsana — we’ve got you covered.
+      <br><br>
+      Our curated itineraries combine authentic experiences, comfortable travel, and spiritual insight, making your journey both meaningful and hassle-free.
+      Let us handle the planning while you focus on devotion, discovery, and peace.
+      <br>
+    </p>
 
-  <div style="background-color: antiquewhite;">
-    <table>
-      <tr>
-        <td>
-
-          <div style="text-align: left; height: 300px;padding: 10px;">
-            <h1 style="font-size:38px;">Travel made easy!</h1>
-            <p style=" font-style:italic; margin: 0px; padding: 20px;">
-              We offer spiritual and cultural tours through the sacred cities of Krishna’s pastimes — Vrindavan,
-              Mathura, and Barsana. These timeless towns are rich with
-              ancient temples, sacred ghats, and vibrant traditions that echo the life and leelas of Lord Krishna.
-              <br> <br>
-              Whether you wish to walk the serene parikrama paths of Vrindavan, witness the aartis by the Yamuna in
-              Mathura, or experience the divine love stories of
-              Radha and Krishna in the vibrant lanes of Barsana — we’ve got you covered.
-              <br><br>
-              Our curated itineraries combine authentic experiences, comfortable travel, and spiritual insight, making
-              your journey both meaningful and hassle-free.
-              Let us handle the planning while you focus on devotion, discovery, and peace.
-              <br>
-            <div style="display: flex; gap: 50px; text-align: center; justify-content: center;">
-              <button
-                style="background-color: #ffa500; border-radius: 20px;width: 200px; height: 50px; font-size: 16px;">View
-                Tour Packages</button>
-              <button
-                style="background-color:#ffa500; border-radius: 20px;width: 200px; height: 50px; font-size: 16px;">Explore
-                Our Services</button>
-            </div>
-            </p>
-          </div>
-        </td>
-        <td>
-          <img src="image\travel.jpg" style="width 150px" height="400px">
-        </td>
-      </tr>
-    </table>
+    <div style="display: flex; gap: 50px; text-align: center; justify-content: center;">
+      <button style="background-color: #ffa500; border-radius: 20px;width: 200px; height: 50px; font-size: 16px;">View Tour Packages</button>
+      <button style="background-color:#ffa500; border-radius: 20px;width: 200px; height: 50px; font-size: 16px;">Explore Our Services</button>
+    </div>
   </div>
+
+  <div class="travel-info-right">
+    <img src="image\travel.jpg" style="width: 850px; height: 400px; object-fit: cover;">
+  </div>
+</div>
+</div>
   <div style="background-color:rgb(82, 39, 9);">
     <h1 style="text-align:center; color: white; font-size:50px;margin: 0; padding: 20px 0;">Featured Travel Packages
     </h1>
